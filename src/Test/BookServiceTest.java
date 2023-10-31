@@ -36,7 +36,7 @@ public class BookServiceTest {
         // Задаем поведение заглушки при вызове метода
         when(mockBookRepository.findByAuthor(author)).thenReturn(book);
         //получаем результат
-        Book result = mockBookService.findBookById(author);
+        Book result = mockBookService.findBookByAuthor(author);
         Assert.assertEquals(book, result);
         verify(mockBookRepository, times(1)).findByAuthor(author);
     }
