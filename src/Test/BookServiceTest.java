@@ -1,3 +1,5 @@
+package Test;
+
 import org.junit.Before;
 import org.junit.Test;
 import seminars.fourth.book.Book;
@@ -35,7 +37,7 @@ public class BookServiceTest {
         when(mockBookRepository.findByAuthor(author)).thenReturn(book);
         //получаем результат
         Book result = mockBookService.findBookById(author);
-        assertEquals(book, result);
+        Assert.assertEquals(book, result);
         verify(mockBookRepository, times(1)).findByAuthor(author);
     }
 
